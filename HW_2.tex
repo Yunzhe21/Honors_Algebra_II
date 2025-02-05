@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent Honors Algebra II \hfill Assignment 2\\
+Yunzhe Zheng. (2025/02/12)
+
+\hrulefill
+
+\begin{problem}
+Find the number of Sylow $2$-subgroups in $S_{5}$. 
+\end{problem}
+
+\textbf{Solution:}  \\
+
+\begin{problem}
+Show that finite group $G$ of cardinal $p^{\alpha}m$ with $(m,p)=1$ has a subgroup of order $p^{i}$ for any $i\leq \alpha$.
+\end{problem}
+
+\textbf{Proof:} Prove by induction, for the base case where $\alpha = 1$, the conclusion is straight from Sylow Theorem. Now suppose for $\alpha\leq n$, the conclusion is true, then for $n + 1$, by Sylow Theorem, there exists a Sylow $p$-group $S$, of order $p^{n+1}$. Since $p$-group has a non-trivial center, pick $x\in Z(S)$ such that $x$ has order $p^{k}$ for $0<k\leq n + 1$. We raise $x$ by power $p^{k-1}$, then $x^{p^{k-1}}$ has order $p$. Now consider $S/\langle x\rangle$, which has order $n=\alpha$, and by induction has a subgroup of order $p^{i}$ for any $i\leq n=\alpha$, thus by considering the canonical homomorphism $S\to S/\langle x\rangle$, it's preimage is what we desired. \qed \\
+
+\begin{problem}
+Let $G$ be a group of order $255$. Show that $G$ is not simple.
+\end{problem}
+
+\textbf{Proof:} Notice that $255=3\times 5\times 17$. Consider the Sylow $17$-subgroup of $G$. By Sylow Theorem, the number of Sylow $17$-group is congruent to $1$ mod $17$, and it divides $3 \times 5=15$, only $1$ satisfies both conditions, thus there is only one Sylow $17$-subgroup in $G$, which is normal in $G$, hence $G$ is not simple. \qed
+
+\end{document}
