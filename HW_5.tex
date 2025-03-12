@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent Honors Algebra II \hfill Assignment 5\\
+Yunzhe Zheng. (2025/03/12)
+
+\hrulefill
+
+\begin{problem}
+Describe all proper subfields of the field $\mathbb{Q}(s)$, $s^{11}=1$.
+\end{problem}
+
+\textbf{Solution:} If $s=1$, then $\mathbb{Q}(s)=\mathbb{Q}$, then there is no proper subfield. Otherwise, the Galois group is $\text{Gal}(\mathbb{Q}(s)/\mathbb{Q})=(\mathbb{Z}/n\mathbb{Z})^{\times}=\mathbb{Z}_{11}^\times$, and one generator of this cyclic group is $\sigma: s\to s^2$. The proper subgroups of that Galois group are of order $2$ or $5$, with generator $\sigma^{5}$ and $\sigma^{2}$ respectively. The generator of the fixed field will are given by $s+\sigma^{5}s=s+s^{-1}=2\cos(\frac{2\pi}{11})$, and $s+\sigma^{2}s+\sigma^{4}s+\sigma^{6}s+\sigma^{8}s=s+s^4+s^5+s^9+s^3=\frac{1}{2}(-1+i\sqrt{11})$. In conclusion, all proper subfields are $\mathbb{Q}(\cos(\frac{2\pi}{11}))$ and $\mathbb{Q}(i\sqrt{11})$. \qed
+\\
+\begin{problem}
+What are possible Galois group over $\mathbb{Q}$ for an irreducible polynomial $f_{4}(x)$ of degree $4$ if the discriminant of $f_{4}$ is negative.
+\end{problem}
+
+\textbf{Solution:} Since Galois group is transitive subgroup of $S_{n}$, we only need to consider transitive subgroup of $S_{4}$, which are $S_{4}$, $A_{4}$, $V_{4}$, $D_{4}$, $C_{4}$. Given that the discriminant is negative, it cannot be a square, and the possibility of $A_{4}$ and $V_{4}$ are ruled out. Also, it indicates that $f_{4}$ has two real roots and two complex roots, then the Galois group must contain a transposition, thus the only two possibilities are $S_{4}$ and $D_{4}$. For irreducible polynomial $x^4-3$, the Galois group is $D_4$, and for irreducible $x^4+x+1$, the Galois group is $S_{4}$.
+\\
+\begin{problem}
+Let $F(\text{Gal})$ be the splitting field of the rational polynomial $x^4-3$. What is the degree $F(\text{Gal}): \mathbb{Q}$ and the Galois group over $\mathbb{Q}$. 
+\end{problem}
+
+\textbf{Solution:} $F(\text{Gal}) = \mathbb{Q}[\sqrt[4]3, i]$, then $[\mathbb{Q}[\sqrt[4]3,i]: \mathbb{Q}]=[\mathbb{Q}[\sqrt[4]3,i]:\mathbb{Q}[i]]\cdot[\mathbb{Q}[i]:\mathbb{Q}]=4\times2=8$. Since $F(\text{Gal})$ is the splitting field over $\mathbb{Q}$ of a separable polynomial in $\mathbb{Q}[x]$, thus it is a Galois extension, then the order of the Galois group is $8$. The automorphisms are as follows: \\
+\indent 1. $\sigma_{1}=\text{Id}$. \\
+\indent 2. $\sigma_{2}$ sends $\sqrt[4]{3}\to-\sqrt[4]{3}$ and $i\to i$. \\
+\indent 3. $\sigma_{3}$ sends $\sqrt[4]{3}\to\sqrt[4]{3}$ and $i\to -i$. \\
+\indent 4. $\sigma_{4}$ sends $\sqrt[4]{3}\to -\sqrt[4]{3}$ and $i\to -i$. \\
+\indent 5. $\sigma_{5}$ sends $\sqrt[4]{3}\to i\sqrt[4]{3}$, $i\sqrt[4]{3}\to-\sqrt[4]{3}$, $-\sqrt[4]{3}\to-i\sqrt[4]{3}$, and $-i\sqrt[4]{3}\to4\sqrt[4]{3}$. \\
+\indent 6. $\sigma_{6}$ sends $\sqrt[4]{3}\to-i\sqrt[4]{3}$, $i\sqrt[4]{3}\to\sqrt[4]{3}$, $-\sqrt[4]{3}\to i\sqrt[4]{3}$, $-i\sqrt[4]{3}\to-\sqrt[4]{3}$.\\
+\indent 7. $\sigma_{7}$ sends $i\sqrt[4]{3}\to\sqrt[4]{3}$, $-\sqrt[4]{3}\to-i\sqrt[4]{3}$.\\
+\indent 8. $\sigma_{8}$ sends $i\sqrt[4]{3}\to-\sqrt[4]{3}$, $\sqrt[4]{3}\to-i\sqrt[4]{3}$.\\
+Considering the four roots of $x^4-3$ as vertices of a square, and consider the $\sigma_{i}'s$ are operations on the four vertices, we notice that the Galois group is actually $D_{4}$. \qed
+\\
+\begin{problem}
+Find the discriminant of the polynomial $x^4+rx+s$.
+\end{problem} 
+
+\textbf{Solution:} The discriminant of a monic polynomial $x^4+ax+b$ of degree 4 is $-27a^4+256b^3$, then the answer is $-27r^4+256s^3$.
+\\
+\begin{problem}
+Determine the Galois group of the polynomial $x^6+2$ and describe all proper subfields of $F(\text{Gal})$ for $F=\mathbb{Q}$.
+\end{problem}
+
+\textbf{Solution:} $F(\text{Gal})=\mathbb{Q}[\sqrt[6]{2}, i\sqrt{3}]. $Since this field extension is indeed a Galois extension, the order of the Galois group is $[\mathbb{Q}[\sqrt[6]{2}, i\sqrt{3}]:\mathbb{Q}]=6\times 2=12$, and by enumerating possible $\mathbb{Q}$-automorphisms just like in problem 3, the Galois group is $D_{6}$. Since $D_{6}$ has three subgroups with index $2$, one subgroup each of index $3, 4, 6$, the subfields are $\mathbb{Q}[i\sqrt{3}]$, $\mathbb{Q}[\sqrt2]$, $\mathbb{Q}[i\sqrt 6]$, $\mathbb{Q}[\sqrt[3]2]$, $\mathbb{Q}[\sqrt{2}, i\sqrt{3}]$, and $\mathbb{Q}[\sqrt[6]2]$.
+\\
+\begin{problem}
+Show that every nonabelian group of order $pq$, where $p,q$ are different primes is solvable.
+\end{problem}
+
+\textbf{Proof:} Without loss of generality, suppose that $p>q$, then the number of Sylow $p$ group in $G$ is 1, which means that the group $G_{1}:=\text{Syl}_{p}(G)$ is normal in $G$. Consider the tower $G\supseteq G_{1}\supseteq\{e\}$, then $G/G_{1}$ has order $q$, then it is abelian. Also, $G_{1}/\{e\}$ is abelian, hence $G$ is solvable. 
+
+\end{document}

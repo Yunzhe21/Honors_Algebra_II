@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent Honors Algebra II \hfill Assignment 4\\
+Yunzhe Zheng. (2025/03/05)
+
+\hrulefill
+
+\begin{problem}
+Find all irreducible polynomials of degree three over $\mathbb{F}_{3}$.         
+\end{problem}
+
+\textbf{Solution:} It's sufficient to consider monic polynomials, since for monic $f(x)$ irreducible, $\alpha f(x)$ is irreducible. Also, since a polynomial of degree $3$ is reducible, it must be reduced to degree one times degree two, thus indicating a root. Let $f(x)=x^{3}+ax^{2}+bx+c$, $a,b,c\in\mathbb{F}_{3}$, $a,b,c$ must satisfies $f(x)\not\equiv 0\mod 3$ for $x=\overline{0}, \overline{1},\overline{2}$. First of all $f(\overline{0})=c\neq \overline{0}$, also, $f(\overline{1})=1+a+b+c\neq\overline{0}$ and $f(\overline{2})=\overline{2}+a+\overline{2}b+c\neq 0$. After checking all $c\in\{\overline{1},\overline{2}\}$ and $a,b\in\{\overline{0}, \overline{1}, \overline{2}\}$, the irreducible polynomials are $x^3+2x+1, x^3+2x+2, x^3+x^2+2, x^3+x^2+x+2, x^3+x^2+2x+1, x^3+2x^2+x+1, x^3+2x^2+1, x^3+2x^2+2x_2$, up to multiplication by $\overline{2}$. 
+
+\begin{problem}
+Describe all possible radical extensions of $\mathbb{F}_{7}$.
+\end{problem}
+
+\textbf{Solution:} We only need to consider $x^n-a=0$ for $n=1, 2, 3, 4, 5, 6$ since $x^7=1$. \\
+\indent When $n=1$, $x-a=0$ always have root inside $\mathbb{F}_{7}$, so the radical extension is $\mathbb{F}_{7}$. \\
+\indent When $n=2$, $x^2-1$, $x^2-2$, $x^2-2$, $x^2-4$, $x^2-7$ have all roots inside $\mathbb{F}_{7}$, so radical extension is $\mathbb{F}_{7}$; $x^2-3$, $x^2-5$, $x^2-6$ have no root inside $\mathbb{F}_{7}$, so radical extension is $\mathbb{F}_{7^2}$ \\
+\indent When $n=3$, $x^3-1=0$, $x^3-6$, $x^3-7$ has all roots in $\mathbb{F}_{7}$, so the radical extension is $\mathbb{F}_{7}$; for $x^3-a=0$ where $a=2, 3, 4, 5, 7$, the radical extension is $\mathbb{F}_{7^3}$. \\
+\indent When $n=4$: \\
+\indent\indent $x^4-1=(x+1)(x-1)(x^2+1)$, where $x^2+1$ is irreducible in $\mathbb{F}_{7}$, so radical extension is $\mathbb{F}_{7^2}$ \\
+\indent\indent $x^4-2=(x-2)(x-5)(x^2+3)$, where $x^2+3$ is irreducible in $\mathbb{F}_{7}$, so radical extension is $\mathbb{F}_{7^2}$\\
+\indent\indent $x^4-3=(x^2+2x+2)(x^2+5x+2)$, then there is no radical extension in $\mathbb{F}_{7}$. \\
+\indent\indent $x^4-4=(x-3)(x-4)(x^2+2)$, then radical extension is $\mathbb{F}_{7^2}$ \\
+\indent\indent $x^4-5=(x^2+x+4)(x^2+6x+4)$, then there is no radical extension. \\
+\indent\indent $x^4-6=(x^2+4x+1)(x^2+3x+1)$, there is no radical extension. \\
+\indent\indent $x^4-7$, the radical extension is $\mathbb{F}_{7}$. \\
+\indent When $n=5$, \\
+\indent\indent $x^5-1=(x-6)(x^4+x^3+x^2+x+1)$, no radical extension. \\
+\indent\indent $x^5-2=(x+3)(x^4+4x^3+2x^2+x+4)$, no radical extension. \\
+\indent\indent $x^5-3=(x+2)(x^4+5x^3+4x^2+6x+2)$, no radical extension. \\
+\indent\indent $x^5-4=(x+5)(x^4+2x^3+4x^2+x+2)$, no radical extension. \\
+\indent\indent $x^5-5=(x+4)(x^4+3x^3+2x^2+6x+4)$, no radical extension. \\
+\indent\indent $x^5-6=(x+1)(x^4+6x^3+x^2+6x+1)$, no radical extension. \\
+\indent When $n=6$, \\
+\indent\indent $x^6-1=(x+2)(x+6)(x+4)(x+5)(x+1)(x+3)$, then radical extension is $\mathbb{F}_{7}$. \\
+\indent\indent $x^6-2=(x^3+3)(x^3+4)$, so radical extension is $\mathbb{F}_{7^3}$. \\
+\indent\indent $x^6-3$ is irreducible in $\mathbb{F}_{7}$, so radical extension is $\mathbb{F}_{7^6}$ \\
+\indent\indent $x^6-4=(x^3+5)(x^3+2)$, radical extension is $\mathbb{F}_{7^3}$ \\
+\indent\indent $x^6-5$ is irreducible, then radical extension is $\mathbb{F}_{7^6}$ \\
+\indent\indent $x^6-6=(x^2+1)(x^2+4)(x^2+2)$, radical extension is $\mathbb{F}_{7^2}$. \\
+\indent To conclude, possible extensions are $\mathbb{F}_{7^2}, \mathbb{F}_{7^3}, \mathbb{F}_{7^6}$.
+
+\begin{problem}
+Find all pairs of elements (modulo conjugation) which generate the group $S_{5}$ and $A_{5}$ respectively.
+\end{problem}
+
+\textbf{Solution:} Suppose $(\tau_{1},\tau_{2})$ generate $S_5$ for $\tau_{1},\tau_{2}\in S_{5}$, and denote $\text{supp}(\tau_{1})=n,\text{supp}(\tau_{2})=m$. Notice that if $m+n<5$, then any combination of $\tau_{1},\tau_{2}$ fixes one point, thus not generating the whole $S_{5}$, when $m+n=5$, then either $\text{supp}(\tau_{1})\cap\text{supp}(\tau_{2})\neq \emptyset$ or $\text{supp}(\tau_{1})\cap\text{supp}(\tau_{2})=\emptyset$, in the former case there exists a point fixed; in the latter case, we form a partition of five elements, and that cannot possibly generate $S_5$. Now, we are left with the following cases: $n=2, m=4$; $n=2, m=5$; $n=3, m=3$; $n=3, m=4$; $n=3, m=5$; $n=4, m=4$; $n=4, m=5$; $n=m=5$ (this case is apparently false). \\
+\indent For $n=2,m=4$, there are two possibilities $(\text{two cycle}), (\text{four cycle})$ or $(\text{two cycle}), \\ (\text{two cycle}) \circ(\text{two cycle})$. We claim that the latter case is impossible, let $(a_{1}, a_{2}), (a_{3}, a_{4})\circ(a_{5}, a_{6})$ generates $S_5$, by the Pigeon Hole Principle, there exists the two support must have only one element in intersection, say $a_{3}=a_{1}$, then by any composition of $\tau_{1},\tau_{2}$, we never send $a_{1}$ to $a_{5}$ or $a_{6}$, so it cannot generate $S_{5}$. For the former case, claim that $(1,5), (1,2,3,4)$ generate $S_5$, since $(1, 5)(1, 2, 3, 4)=(1, 2, 3, 4, 5)$, and the fact that $(1, 2, 3, 4, 5)(1, 2)(1, 2, 3, 4, 5)^{-1}=(2,3)$, $(1, 2, 3, 4, 5)^{2}(1, 2)(1, 2, 3, 4, 5)^{-2}=(3, 4)$, and $(1, 2, 3, 4, 5)^{3}(1, 2)(1, 2, 3, 4, 5)^{-3}=(4, 5)$, then it generates $S_5$. \\
+\indent For $n=2,m=5$, consider $(\text{two cycle}), (\text{two cycle})\circ(\text{three cycle})$, and the case of $(\text{two cycle})$, $(\text{five cycle})$. For the former case, consider $(1, 2)(3, 4, 5)$ and $(2, 3)$, then $(2, 3, 4, 5) \\(2, 3)(2, 3, 4, 5)^{-1}=(3, 4)$, $(2, 3, 4, 5)^{2}(2, 3)(2, 3, 4, 5)^{-2}=(4, 5)$, and that generate $S_{5}$. For the latter case, consider $(1, 2)$ and $(1, 2, 3, 4, 5)$, by previous discussion it must generates $S_{5}$. \\
+\indent For $n=3, m=3$, then we only need to check $(\text{3-cycle})\circ(\text{3-cycle})$, and it cannot generate $S_5$, since it generates only even permutations. \\
+\indent For $n=3, m=4$, we only need to consider $(\text{three cycle})$, $(\text{four cycle})$ and $(\text{three cycle}), \\ (\text{two cycle})\circ(\text{two cycle})$, the latter is impossible as it only generates even permutation. For the former case, consider $(1, 2, 3)$ and $(1,4,2,5)$, then since $(1, 2, 3)(1, 4, 2, 5)$ consist of a two cycle, thus can generate $S_5$. \\
+\indent For $n=3, n=5$, consider $(\text{three cycle}), (\text{five cycle})$, and $(\text{three cycle}), (\text{two cycle})\circ(\text{three cycle})$. The former case is impossible since it can only generate even permutations. For the latter case, $(1,4,3)(2,5)$ and $(1,3,2)$ generates $S_5$. \\
+\indent For $n=m=4$, consider $(\text{four cycle}), (\text{four cycle})$, or $(\text{two cycle})\circ(\text{two cycle}), (\text{four cycle})$, or $(\text{two cycle})\circ(\text{two cycle}), (\text{two cycle})\circ(\text{two cycle})$. The last case is impossible since it only generates even permutations. For the first case, consider $(1, 2, 3, 4)$ and $(1, 2, 4, 5)$. For the second case, consider $(1, 2, 3, 4)$ and $(1, 5)(2, 3)$. \\
+\indent For $n=4, m=5$, there are three cases. $(\text{two cycles})\circ(\text{two cycles})$, $(\text{two cycle})\circ(\text{three cycle})$; $(\text{four cycle})$, $(\text{five cycle})$; $(\text{four cycle})$, $(\text{two cycle})\circ(\text{three cycle})$. Consider the following three examples: $(1, 2, 3)(4, 5)$ and $(1, 4)(2, 5)$; $(1,2,3,4)$ and $(1,2,3,4,5)$; $(1,2,3,4)$ and $(1, 2, 3)(4,5)$, which generates $S_5$.\\
+\indent For $A_{5}$, consider $(1, 2, 3)$ and $(1, 4, 5)$; $(1, 2, 3)$ and $(1, 4)(2, 5)$; $(1, 2, 3)$ and $(1, 2, 3, 4, 5)$; $(1, 2, 3)$ and $(3, 2, 1, 4, 5)$; $(1, 2, 3)$ and $(1, 2, 4, 3, 5)$; $(1, 2, 3)$ and $(3, 2, 4, 1, 5)$; $(2, 3)(4, 5)$ and $(1,5,4,3,2)$; $(1, 5, 4,3,2)$ and $(1, 2, 3, 5,4 )$,  these kind of pairs generate $A_5$
+
+\begin{problem}
+Describe all finite rings of order $108$ modulo isomorphism.
+\end{problem}
+
+\textbf{Proof:} First of all, $\mathbb{Z}_{108}$ is a finite ring of order $108$. Then, since a finite ring $R$ is also a finite abelian group, then by prime factorization $108=2^2\times 3^3$, $R$ can be decomposed into ring of order $4$ and order $27$. Now we only need to describe the finite ring of order $4$ and $27$. When the order is $4$, characteristic of $R$ is either $4$ or $2$, for characteristic $4$, the ring is $\mathbb{Z}_4$. For characteristic $2$, denote the ring elements as $0, 1, a, a+1$, then the following cases describe all finite rings of order four with characteristic $2$: \\
+\indent For $a^2=0$, $a(1+a)=a$, and $(1+a)^2=1$. \\
+\indent For $a^2=1$, $a(1+a)=1+a$, and $(1+a)^2=0$. \\
+\indent For $a^2=a$, $a(a+1)=0$, and $(a+1)^2=a+1$. \\
+\indent For $a^2=1+a$, $a(1+a)=1$, and $(a+1)^2=a$. \\
+In the case of order 27, by the classification of finite abelian group, there are three cases $\mathbb{Z}_{27}$, $\mathbb{Z}_{9}\oplus \mathbb{Z}_{3}$, and $\mathbb{Z}_{3}\oplus\mathbb{Z}_{3}\oplus\mathbb{Z}_{3}$,  which are also rings. By pairing each cases, it describes all possibilities.
+\begin{problem}
+Consider the ring $\mathbb{Z}_{5}[x]/(x^5)$. Describe the group of invertible elements in the ring.
+\end{problem}
+
+\textbf{Solution:} Representatives in $\mathbb{Z}_{5}/(x^5)$ are of the form $a_{0}+a_1x+a_2x^2+a_3x^3+a_4x^4$, then the polynomial is invertible if and only if $a_{0}\neq 0$, then $a_{0}+a_1x+a_2x^2+a_3x^3+a_4x^4=a_0(1+a_o^{-1}a_1x+a_0^{-1}a_2x+a_{0}^{-1}a_3x^3+a_0^{-1}a_4x^4)$, then the unit is isomorphic to $\mathbb{Z}_{5}^{*}\times (1+x\mathbb{Z}_{5}[x]/(x^5))$, and since $1+x\mathbb{Z}_{5}[x]/(x^5)\simeq (\mathbb{Z}_{5})^4$, the group of units is isomorphic to $\mathbb{Z}_{5}^{*}\times \mathbb{Z}_{5}^4$. 
+\end{document}
