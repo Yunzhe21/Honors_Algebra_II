@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+
+\newcommand{\legendre}[2]{\ensuremath{\left( \frac{#1}{#2} \right) }}
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent Honors Algebra II \hfill Assignment 8\\
+Yunzhe Zheng. (2025/04/30)
+
+\hrulefill
+
+\begin{problem}
+Let $G$ be noncommutative group of order $24$ with a noncommutative Sylow $2$-subgroup. How many different Sylow $2$-subgroups may contain in $G$?
+\end{problem}
+
+\textbf{Solution:} Since there exists one noncommutative Sylow $2$-subgroup, then by conjugacy relationship between Sylow $2$-groups, all of them are noncommutative. By Sylow's Third Theorem, the possible number of Sylow $2$-groups are either $n=1$ or $n=3$. Consider $S_4$, and $\langle (1\ 2\ 3\ 4), (1\ 3)\rangle$ is a Sylow $2$-subgroup isomorphic to $D_4$, and up to conjugation by $(2\ 3)$, we obtain $\langle (1\ 3\ 2\ 4), (1\ 2)\rangle$, another Sylow $2$-group, then there are $3$ Sylow $2$-groups in $S_4$. Finally consider $D_4\times C_3$, $D_4$ is the only Sylow $2$-group of it. To conclude, the number can be $1$ or $3$. \qed
+\\
+\begin{problem}
+Which pairwise product of irreducible representations of $A_5$ have integral character?
+\end{problem}
+
+\textbf{Solution:} First need to draw the character table for $A_5$. There are five conjugacy classes of $A_5$, namely $C_1=[e]$, $C_2=[(1\ 2\ 3)]$, $C_3=[(1\ 2)(3\ 4)]$, $C_4=[(1\ 2\ 3\ 4\ 5)]$ and $C_5=[(1\ 3\ 5\ 2\ 4)]$, so there are five non-isomorphic irreducible representations of $A_5$, and $60=n_1^2+n_2^2+n_3^2+n_4^2+n_5^2=1^2+3^2+3^2+4^2+5^2$, then the table should look like (Also computed in Artin): 
+\begin{center}
+\begin{tabular}{||c c c c c c||} 
+ \hline
+  & $C_1$ & $C_2$ & $C_3$ & $C_4$ & $C_5$\\ [0.5ex] 
+ \hline\hline
+ $\chi(V_1)$ & 1 & 1 & 1 & 1 & 1\\ 
+ \hline
+ $\chi(V_3)$ & 3 & -1 & 0 & $\frac{1}{2}+\frac{1}{2}\sqrt{5}$ & $\frac{1}{2}-\frac{1}{2}\sqrt{5}$\\
+ \hline
+ $\chi(V_3')$ & 3 & -1 & 0 & $\frac{1}{2}-\frac{1}{2}\sqrt{5}$ & $\frac{1}{2}+\frac{1}{2}\sqrt{5}$\\
+ \hline
+ $\chi(V_4)$ & 4 & 0 & 1 & -1 & -1\\
+ \hline
+ $\chi(V_5)$ & 5 & 1 & -1 & 0 & 0\\
+ \hline
+\end{tabular}
+\end{center} then by the fact that the character of product of irreducible representations is the product of their character, we conclude that $V_1\otimes V_1$, $V_1\otimes V_4$, $V_1\otimes V_5$, $V_3\otimes V_3'$, $V_4\otimes V_4$, $V_4\otimes V_5$ and $V_5\otimes V_5$ have integral character. \qed
+\\
+\begin{problem}
+Find all irreducible representations of $S_6$ with the property that only one conjugacy class has character $0$.
+\end{problem}
+
+\textbf{Solution:} Judging from the character table of $S_6$: $C_1=[e]$, $C_2=[(1\ 2)]$, $C_3=[(1\ 2)(3\ 4)(5\ 6)]$, $C_4=[(1\ 2\ 3)]$, $C_5=[(1\ 2\ 3)(4\ 5\ 6)]$, $C_6=[(1\ 2)(3\ 4)]$, $C_7=[(1\ 2\ 3\ 4)]$, $C_8=[(1\ 2\ 3\ 4)(5\ 6)]$, $C_9=[(1\ 2\ 3)(4\ 5)]$, $C_{10}=[(1\ 2\ 3\ 4\ 5\ 6)]$, $C_{11}=[(1\ 2\ 3\ 4\ 5)]$
+\begin{center}
+\begin{tabular}{||c c c c c c c c c c c c||} 
+ \hline
+  & $C_1$ & $C_2$ & $C_3$ & $C_4$ & $C_5$ & $C_6$ & $C_7$ & $C_8$ & $C_9$ & $C_{10}$ & $C_{11}$\\ [0.5ex] 
+ \hline\hline
+ $\chi(V_1)$ & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+ \hline
+ $\chi(V_1')$ & 1 & -1 & -1 & 1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\
+ \hline
+ $\chi(V_5)$ & 5 & 3 & -1 & 2 & -1 & 1 & 1 & -1 & 0 & -1 & 0\\
+ \hline
+ $\chi(V_5^1)$ & 5 & -3 & 1 & 2 & -1 & 1 & -1 & -1 & 0 & 1 & 0\\
+ \hline
+ $\chi(V_5^2)$ & 5 & -1 & 3 & -1 & 2 & 1 & 1 & -1 & -1 & 0 & 0\\
+ \hline
+ $\chi(V_5^3)$ & 5 & 1 & -3 & -1 & 2 & 1 & -1 & -1 & 1 & 0 & 0 \\
+ \hline
+ $\chi(V_9^1)$ & 9 & 3 & 3 & 0 & 0 & 1 & -1 & 1 & 0 & 0 & -1 \\
+ \hline
+ $\chi(V_9^2)$ & 9 & -3 & -3 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & -1 \\
+ \hline
+ $\chi(V_{10}^1)$ & 10 & 2 & -2 & 1 & 1 & -2 & 0 & 0 & -1 & 1 & 0 \\
+ \hline
+ $\chi(V_{10}^2)$ & 10 & -2 & 2 & 1 & 1 & -2 & 0 & 0 & 1 & -1 & 0 \\
+ \hline
+ $\chi(V_16)$ & 16 & 0 & 0 & -2 & -2 & 0 & 0 & 0 & 0 & 0 & 1 \\
+ \hline
+\end{tabular}
+\end{center} then such irreducible representation doesn't exist.
+\\
+\begin{problem}
+Let $G$ be a finite group. How can we deduce from the character table that $G$ is simple and more generally describe normal subgroups. 
+\end{problem}
+
+\textbf{Proof:} $G$ is simple if and only if $\ker(\rho):=\{g\in G: \chi(\rho_g)=\chi(\rho_e)\}$ is trivial or the whole group $G$ for irreducible representation $\rho$. Notice that $\ker(\rho)\trianglelefteq G$, since for any $h\in \ker(\rho)$, $\chi(\rho_{ghg^{-1}})=\chi(\rho_h)=\chi(\rho_e)$, $ghg^{-1}\in \ker(\rho)$. So it's sufficient to check each row to see whether any other conjugacy classes share the same character as $[e]$.\\
+\indent To describe normal subgroups of $G$, claim that normal subgroup $N$ of $G$ is the intersection of $\ker(\rho)$ defined as above for some irreducible representations. Consider the map $\rho: G\xrightarrow[]{\pi} G/N\xrightarrow[]{\tilde{\rho}} GL(V)$, then there is a one-to-one correspondence between $\{\text{Irreducibles of }G/N\}$ and $\{\text{Irreducibles of }G\text{ with }N\text{ in its kernel}\}$. Let $\tilde{\rho}_1, \dots, \tilde{\rho}_n$ be all the irreducibles of $G/N$, and $\rho_1, \dots, \rho_n$ be the corresponding irreducible representation, then by the correspondence, $N\leq \bigcap_{i=1}^{n}\ker(\rho_i)$. To show equality, choose any $g\in G\setminus N$, have $gN\neq N$, then $\tilde{\chi}(\tilde{\rho}_{gN})\neq \tilde{\chi}(\tilde{\rho}_N)$ for some irreducible $\tilde{\rho}$ of $G/N$, thus $\chi(\rho_g)\neq\chi(\rho_e)$ for the corresponding irreducible $\rho$ of $G$, then $g\notin\bigcap_{i=1}^{n}\ker(\rho_i)$ and $N=\bigcap_{i=1}^{n}\ker(\rho_i)$. \qed
+\\
+\begin{problem}
+Consider representations of $S_5$ of dimension $11$. Describe all such representations. (i.e. sum of irreducible representations.)
+\end{problem}
+
+\textbf{Solution:} $S_5$ has seven conjugacy classes, namely $C_1=[e]$, $C_2=[(1\ 2)]$, $C_3=[(1\ 2)(3\ 4)]$, $C_4=[(1\ 2)(3\ 4\ 5)]$, $C_5=[(1\ 2\ 3)]$, $C_6=[(1\ 2\ 3\ 4)]$ and $C_7=[(1\ 2\ 3\ 4\ 5)]$. Since $S_5$ has one trivial representation and one sign representation, the character table can be drawn as: 
+\begin{center}
+\begin{tabular}{||c c c c c c c c||}
+\hline
+ & $C_1$ & $C_2$ & $C_3$ & $C_4$ & $C_5$ & $C_6$ & $C_7$\\
+\hline
+$\chi(V_1)$ & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\ 
+\hline
+$\chi(V_1')$ & 1 & -1 & 1 & -1 & 1 & -1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+Also, notice that although the regular representation is not irreducible, but it can be decomposed into $V_1\oplus V_4$, by calculating character for regular representation and minus each entry with character of $V_1$, notice that it is irreducible, and the row is 
+\begin{center}
+\begin{tabular}{||c c c c c c c c||}
+\hline
+$\chi(V_4)$ & 4 & 2 & 0 & -1 & 1 & 0 & -1 \\
+\hline
+\end{tabular}
+\end{center}
+By tensor product $V_1'\otimes V_4$, it is also a irreducible
+representation 
+\begin{center}
+\begin{tabular}{||c c c c c c c c||}
+\hline
+$\chi(V_4')$ & 4 & -2 & 0 & 1 & 1 & 0 & -1 \\
+\hline
+\end{tabular}
+\end{center}
+For the remaining 3 irreducible representation, by the fact that sum of square of their dimensions are $86$, the table looks like: 
+\begin{center}
+\begin{tabular}{||c c c c c c c c||}
+\hline
+$\chi(V_5)$ & 5 & $a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$ & $a_6$ \\
+\hline
+$\chi(V_5')$ & 5 & $b_1$ & $b_2$ & $b_3$ & $b_4$ & $b_5$ & $b_6$ \\
+\hline
+$\chi(V_6)$ & 6 & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ & $c_6$ \\
+\hline
+\end{tabular}
+\end{center}
+Consider irreducible representation of dimension $5$, since $\rho_{(1\ 2\ 3\ 4\ 5)^5}=Id$, then the eigenvalues are either $1$ with multiplicity $5$ or fifth roots of unity. If it's the former case, then $24\times 5^2> 120$, making the representation impossible to be irreducible, then it must be the latter case, where the character $\chi(\rho_{(1\ 2\ 3\ 4\ 5)})=0$. Similarly with $(1\ 2\ 3\ 4)$, $\chi(\rho_{(1\ 2\ 3\ 4)})=\pm1$, $\chi(\rho_{(1\ 2\ 3)})=-1$, then by orthogonality calculation, we obtain the final table:
+\begin{center}
+\begin{tabular}{||c c c c c c c c||}
+\hline
+$\chi(V_5)$ & 5 & $-1$ & $1$ & $-1$ & $-1$ & $1$ & $0$ \\
+\hline
+$\chi(V_5')$ & 5 & $1$ & $1$ & $1$ & $-1$ & $-1$ & $0$ \\
+\hline
+$\chi(V_6)$ & 6 & $0$ & $-2$ & $0$ & $0$ & $0$ & $1$ \\
+\hline
+\end{tabular}
+\end{center}
+Finally, representation of dimension $11$ will be integer partition of $11$ with $1, 4, 5, 6$, and it can be partitioned as $(1, \dots, 1)$, $(1, 1, 1, 1, 1, 1, 1, 4)$, $(1, 1, 1, 4, 4)$, $(5, 6)$, $(5, 5, 1)$, $(5, 4, 1, 1)$, $(6, 4, 1)$, $(6, 1, 1, 1, 1, 1)$. By plugging in the corresponding irreducible representation, we may describe all possible representation of dimension $11$.
+\end{document}
