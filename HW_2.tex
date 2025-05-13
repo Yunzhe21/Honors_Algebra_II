@@ -23,13 +23,13 @@ Yunzhe Zheng. (2025/02/12)
 Find the number of Sylow $2$-subgroups in $S_{5}$. 
 \end{problem}
 
-\textbf{Solution:}  \\
-
+\textbf{Solution:} Order of Sylow $2$-group in $S_{5}$ has order $2^3=8$. Notice that $D_{4}$ also has order $8$, and we consider four indices out of five as vertices of a rectangle, then $D_{4}$ can be represented as permutations. There are $5$ ways to pick four vertices, and within each choice, there are $4!=24$ ways to name each vertex, 6 distinct namings up to rotation, and finally $3$ distinct namings up to both flipping and rotation. Thus the number is $15$, given the fact that the only options are $3, 5, 15$ by Sylow Theorem.
+\\
 \begin{problem}
 Show that finite group $G$ of cardinal $p^{\alpha}m$ with $(m,p)=1$ has a subgroup of order $p^{i}$ for any $i\leq \alpha$.
 \end{problem}
 
-\textbf{Proof:} Prove by induction, for the base case where $\alpha = 1$, the conclusion is straight from Sylow Theorem. Now suppose for $\alpha\leq n$, the conclusion is true, then for $n + 1$, by Sylow Theorem, there exists a Sylow $p$-group $S$, of order $p^{n+1}$. Since $p$-group has a non-trivial center, pick $x\in Z(S)$ such that $x$ has order $p^{k}$ for $0<k\leq n + 1$. We raise $x$ by power $p^{k-1}$, then $x^{p^{k-1}}$ has order $p$. Now consider $S/\langle x\rangle$, which has order $n=\alpha$, and by induction has a subgroup of order $p^{i}$ for any $i\leq n=\alpha$, thus by considering the canonical homomorphism $S\to S/\langle x\rangle$, it's preimage is what we desired. \qed \\
+\textbf{Proof:} Prove by induction, for the base case where $\alpha = 1$, the conclusion is straight from Sylow Theorem. Now suppose for $\alpha\leq n$, the conclusion is true, then for $n + 1$, by Sylow Theorem, there exists a Sylow $p$-group $S$, of order $p^{n+1}$. Since $p$-group has a non-trivial center, pick $x\in Z(S)$ such that $x$ has order $p^{k}$ for some $0<k\leq n + 1$. We raise $x$ by power $p^{k-1}$, then $x^{p^{k-1}}$ has order $p$. Now consider $S/\langle x^{p^{k-1}}\rangle$, which has order $p^n$, and by induction it has a subgroup of order $p^{i}$ for any $i\leq n=\alpha$, thus by considering the canonical homomorphism $S\to S/\langle x^{p^{k-1}}\rangle$, it's preimage is what we desired. \qed \\
 
 \begin{problem}
 Let $G$ be a group of order $255$. Show that $G$ is not simple.
